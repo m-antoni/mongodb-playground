@@ -1,4 +1,5 @@
 const { MongoClient } = require('mongodb');
+require('dotenv').config();
 
 async function main(){
     /**
@@ -6,7 +7,7 @@ async function main(){
      * See https://docs.mongodb.com/ecosystem/drivers/node/ for more details
      * Blog post https://www.mongodb.com/developer/quickstart/node-crud-tutorial/
      */
-    const uri = "mongodb+srv://michael:spq81iFnFATTrR2y@michael-antoni.0vpcv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+    const uri = process.env.MONGO_URI;
     
     const client = new MongoClient(uri);
 
